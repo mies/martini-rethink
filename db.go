@@ -28,11 +28,10 @@ func InitDB() *r.Session {
     	log.Println(err)
     }
 
-	response, err := r.Db("test").TableCreate("todos").RunWrite(session)
+	_, err = r.Db("test").TableCreate("todos").RunWrite(session)
 	if err != nil {
 		log.Println(err)
 	}
-	log.Println(response)
 
 	return session
 }
