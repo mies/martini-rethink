@@ -3,7 +3,6 @@ package main
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-    "log"
 	"testing"
 	"net/http"
 	"net/http/httptest"
