@@ -1,20 +1,20 @@
 package main
 
 import (
-	"os"
+	//"os"
 	"log"
 	"time"
 	r "github.com/dancannon/gorethink"
 )
 
-//var session *r.Session
-
 func InitDB() *r.Session {
-	//var err error
+
+	//address := os.Getenv("RETHINKDB_URL") || "localhost:28015"
 
 	session, err := r.Connect(map[string]interface{} {
-		"address" : os.Getenv("RETHINKDB_URL"),
-		//"address" : "localhost:28015",
+		//"address" : (os.Getenv("RETHINKDB_URL") | "localhost:28015")
+		"address" : "localhost:28015",
+		//"address" : address,
 		"database": "test",
 		"maxIdle" : 10,
 		"idleTimeout": time.Second  * 10,
@@ -23,7 +23,7 @@ func InitDB() *r.Session {
 	if err != nil {
 		log.Println(err)
 	}
-	err = r.DbCreate("todos").Exec(session)
+	err = r.DbCreate("test").Exec(session)
     if err != nil {
     	log.Println(err)
     }
