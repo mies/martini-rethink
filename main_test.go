@@ -15,7 +15,6 @@ var _ = Describe("List all todos", func() {
 	})
 })
 
-
 var _ = Describe("Insert new todo", func() {
 
     var (
