@@ -10,8 +10,7 @@ import (
 func InitDB() *r.Session {
 
 	session, err := r.Connect(map[string]interface{} {
-		//"address" : (os.Getenv("RETHINKDB_URL") | "localhost:28015")
-		"address" : "localhost:28015",
+		"address" : os.Getenv("RETHINKDB_URL")
 		"database": "test",
 		"maxIdle" : 10,
 		"idleTimeout": time.Second  * 10,
