@@ -48,7 +48,7 @@ var _ = Describe("Todo", func() {
             log.Println(response.Body)
             Expect(response.Code).To(Equal(200))
 
-            Expect(response.Body).To(MatchJSON(`{"Name":"keep things green"}`))
+            Expect(response.Body).To(MatchJSON(`[{"Name":"keep things green"}]`))
         })
     })
 })
